@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النمو والتطوير - منصة إدارة الموظفين | HMZ Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span class="logo-text">HMZ Dashboard</span>
+            </div>
+            <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="sidebar-menu">
+            <ul class="menu-list">
+                <li class="menu-item"><a href="index.html" class="menu-link"><i class="fas fa-chart-line"></i><span>نظرة عامة</span></a></li>
+                <li class="menu-item"><a href="analytics.html" class="menu-link"><i class="fas fa-analytics"></i><span>التحليلات</span></a></li>
+                <li class="menu-item"><a href="revenue.html" class="menu-link"><i class="fas fa-dollar-sign"></i><span>الإيرادات</span></a></li>
+                <li class="menu-item"><a href="customers.html" class="menu-link"><i class="fas fa-users"></i><span>العملاء</span></a></li>
+                <li class="menu-item"><a href="employees.html" class="menu-link"><i class="fas fa-user-tie"></i><span>الموظفون المتتبعون</span></a></li>
+                <li class="menu-item"><a href="reports.html" class="menu-link"><i class="fas fa-file-alt"></i><span>التقارير</span></a></li>
+                <li class="menu-item active"><a href="growth.html" class="menu-link"><i class="fas fa-trending-up"></i><span>النمو</span></a></li>
+                <li class="menu-item"><a href="settings.html" class="menu-link"><i class="fas fa-cogs"></i><span>الإعدادات</span></a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">أحمد محمد</span>
+                    <span class="user-role">المدير التنفيذي</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <h1 class="page-title">النمو والتطوير</h1>
+                <p class="page-subtitle">مؤشرات النمو وخطط التوسع المستقبلية</p>
+            </div>
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="btn btn-outline"><i class="fas fa-chart-area"></i>تحليل النمو</button>
+                    <button class="btn btn-primary"><i class="fas fa-rocket"></i>خطة توسع</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="growth-overview">
+            <div class="cards-grid">
+                <div class="stats-card monthly-growth">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">النمو الشهري</h3>
+                        <div class="card-value">+18.5%</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>تحسن مستمر</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card expansion-rate">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">معدل التوسع</h3>
+                        <div class="card-value">347%</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-rocket"></i>
+                            <span>نمو متسارع</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card market-penetration">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">اختراق السوق</h3>
+                        <div class="card-value">23.4%</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-target"></i>
+                            <span>هدف 35% بحلول 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card growth-velocity">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">سرعة النمو</h3>
+                        <div class="card-value">4.2x</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-bolt"></i>
+                            <span>مقارنة بالسنة الماضية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="growth-strategies">
+            <div class="strategies-card">
+                <div class="card-header">
+                    <h3>استراتيجيات النمو النشطة</h3>
+                </div>
+                <div class="card-content">
+                    <div class="strategies-grid">
+                        <div class="strategy-item market-expansion">
+                            <div class="strategy-icon"><i class="fas fa-map-marked-alt"></i></div>
+                            <div class="strategy-info">
+                                <h4>التوسع الجغرافي</h4>
+                                <p>دخول 5 أسواق جديدة في منطقة الخليج</p>
+                                <div class="strategy-progress">
+                                    <span class="progress-label">التقدم: 67%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 67%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="strategy-status">
+                                <span class="status active">نشط</span>
+                            </div>
+                        </div>
+
+                        <div class="strategy-item product-development">
+                            <div class="strategy-icon"><i class="fas fa-code"></i></div>
+                            <div class="strategy-info">
+                                <h4>تطوير المنتجات</h4>
+                                <p>إطلاق 3 ميزات جديدة بالذكاء الاصطناعي</p>
+                                <div class="strategy-progress">
+                                    <span class="progress-label">التقدم: 45%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 45%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="strategy-status">
+                                <span class="status development">تطوير</span>
+                            </div>
+                        </div>
+
+                        <div class="strategy-item partnerships">
+                            <div class="strategy-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="strategy-info">
+                                <h4>الشراكات الاستراتيجية</h4>
+                                <p>تعاون مع 10 شركات تقنية رائدة</p>
+                                <div class="strategy-progress">
+                                    <span class="progress-label">التقدم: 80%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="strategy-status">
+                                <span class="status almost-complete">شبه مكتمل</span>
+                            </div>
+                        </div>
+
+                        <div class="strategy-item team-scaling">
+                            <div class="strategy-icon"><i class="fas fa-users-cog"></i></div>
+                            <div class="strategy-info">
+                                <h4>توسيع الفريق</h4>
+                                <p>توظيف 50 خبير تقني في 6 أشهر</p>
+                                <div class="strategy-progress">
+                                    <span class="progress-label">التقدم: 34%</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 34%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="strategy-status">
+                                <span class="status planning">تخطيط</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="growth-metrics">
+            <div class="metrics-grid">
+                <div class="chart-card large">
+                    <div class="card-header">
+                        <h3>منحنى النمو السنوي</h3>
+                    </div>
+                    <div class="card-content">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+                <div class="milestones-card">
+                    <div class="card-header">
+                        <h3>المعالم المقبلة</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="milestones-timeline">
+                            <div class="milestone-item upcoming">
+                                <div class="milestone-date">Q2 2025</div>
+                                <div class="milestone-info">
+                                    <h4>100K موظف متتبع</h4>
+                                    <p>الوصول إلى 100 ألف موظف على المنصة</p>
+                                </div>
+                                <div class="milestone-status">
+                                    <i class="fas fa-clock text-warning"></i>
+                                </div>
+                            </div>
+                            <div class="milestone-item future">
+                                <div class="milestone-date">Q3 2025</div>
+                                <div class="milestone-info">
+                                    <h4>توسع إقليمي</h4>
+                                    <p>دخول السوق المصري والمغربي</p>
+                                </div>
+                                <div class="milestone-status">
+                                    <i class="fas fa-map text-info"></i>
+                                </div>
+                            </div>
+                            <div class="milestone-item future">
+                                <div class="milestone-date">Q4 2025</div>
+                                <div class="milestone-info">
+                                    <h4>منصة AI متقدمة</h4>
+                                    <p>إطلاق نظام ذكاء اصطناعي متكامل</p>
+                                </div>
+                                <div class="milestone-status">
+                                    <i class="fas fa-robot text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="investment-opportunities">
+            <div class="investment-card">
+                <div class="card-header">
+                    <h3>فرص الاستثمار والتمويل</h3>
+                </div>
+                <div class="card-content">
+                    <div class="investment-grid">
+                        <div class="investment-item series-a">
+                            <div class="investment-header">
+                                <h4>Series A</h4>
+                                <span class="investment-amount">$5M</span>
+                            </div>
+                            <div class="investment-details">
+                                <p>تمويل للتوسع الإقليمي وتطوير المنتج</p>
+                                <div class="investment-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">التقييم</span>
+                                        <span class="metric-value">$25M</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">المدة</span>
+                                        <span class="metric-value">18 شهر</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-sm">تفاصيل أكثر</button>
+                        </div>
+
+                        <div class="investment-item growth-fund">
+                            <div class="investment-header">
+                                <h4>صندوق النمو</h4>
+                                <span class="investment-amount">$2M</span>
+                            </div>
+                            <div class="investment-details">
+                                <p>تسريع النمو وتوسيع الفريق التقني</p>
+                                <div class="investment-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">العائد المتوقع</span>
+                                        <span class="metric-value">5x</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">المخاطر</span>
+                                        <span class="metric-value">متوسط</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm">دراسة الجدوى</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>HMZ Technology</span>
+                </div>
+                <p class="footer-tagline">منصة SaaS متطورة لإدارة الموظفين - نمو متسارع ومستدام</p>
+            </div>
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h4>استراتيجية النمو</h4>
+                    <p>خطط نمو مدروسة وقابلة للتنفيذ</p>
+                    <p>📧 growth@hmztechnology.com | 📱 +961 70 106 083</p>
+                </div>
+                <div class="footer-section">
+                    <h4>التوسع العالمي</h4>
+                    <p>رؤية عالمية للوصول للعالمية</p>
+                    <p>النسخة: Growth Pro v1.5 © 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .monthly-growth .card-icon { background: linear-gradient(135deg, #28a745, #20c997); }
+        .expansion-rate .card-icon { background: linear-gradient(135deg, #1B4B7F, #3498db); }
+        .market-penetration .card-icon { background: linear-gradient(135deg, #6f42c1, #8e44ad); }
+        .growth-velocity .card-icon { background: linear-gradient(135deg, #ffc107, #ffb347); }
+
+        .strategies-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); }
+        .strategy-item { display: flex; align-items: center; gap: var(--spacing-md); padding: var(--spacing-lg); background: white; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); }
+        .strategy-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; }
+        .market-expansion .strategy-icon { background: linear-gradient(135deg, #28a745, #20c997); }
+        .product-development .strategy-icon { background: linear-gradient(135deg, #1B4B7F, #3498db); }
+        .partnerships .strategy-icon { background: linear-gradient(135deg, #6f42c1, #8e44ad); }
+        .team-scaling .strategy-icon { background: linear-gradient(135deg, #ffc107, #ffb347); }
+        .strategy-info { flex: 1; }
+        .strategy-info h4 { margin: 0 0 5px 0; font-size: var(--font-size-md); color: var(--text-primary); }
+        .strategy-info p { margin: 0 0 10px 0; color: var(--text-secondary); font-size: var(--font-size-sm); }
+        .strategy-progress { margin-top: 10px; }
+        .progress-label { font-size: var(--font-size-xs); color: var(--text-secondary); }
+        .strategy-status .status { padding: 4px 8px; border-radius: 12px; font-size: var(--font-size-xs); font-weight: 600; }
+        .status.active { background: #e8f5e8; color: #2e7d32; }
+        .status.development { background: #e3f2fd; color: #1565c0; }
+        .status.almost-complete { background: #f3e5f5; color: #7b1fa2; }
+        .status.planning { background: #fff3cd; color: #856404; }
+
+        .metrics-grid { display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg); }
+        .chart-card { background: white; border-radius: var(--border-radius); padding: var(--spacing-lg); box-shadow: var(--shadow-md); }
+        .large { grid-column: span 1; }
+
+        .milestones-timeline { display: flex; flex-direction: column; gap: var(--spacing-lg); }
+        .milestone-item { display: flex; align-items: center; gap: var(--spacing-md); padding: var(--spacing-md); border-radius: var(--border-radius); border: 2px solid #e9ecef; }
+        .milestone-item.upcoming { border-color: #ffc107; background: #fff8e1; }
+        .milestone-item.future { border-color: #e9ecef; }
+        .milestone-date { font-size: var(--font-size-sm); font-weight: 600; color: var(--primary-color); min-width: 80px; }
+        .milestone-info { flex: 1; }
+        .milestone-info h4 { margin: 0 0 5px 0; font-size: var(--font-size-md); color: var(--text-primary); }
+        .milestone-info p { margin: 0; color: var(--text-secondary); font-size: var(--font-size-sm); }
+        .milestone-status { font-size: 20px; }
+
+        .investment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); }
+        .investment-item { padding: var(--spacing-lg); background: white; border-radius: var(--border-radius); border: 2px solid #e9ecef; }
+        .investment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-md); }
+        .investment-header h4 { margin: 0; font-size: var(--font-size-lg); color: var(--text-primary); }
+        .investment-amount { font-size: var(--font-size-xl); font-weight: 700; color: var(--primary-color); }
+        .investment-details p { margin: 0 0 var(--spacing-md) 0; color: var(--text-secondary); }
+        .investment-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }
+        .metric { text-align: center; }
+        .metric-label { display: block; font-size: var(--font-size-xs); color: var(--text-secondary); }
+        .metric-value { display: block; font-size: var(--font-size-md); font-weight: 600; color: var(--text-primary); }
+
+        .dashboard-footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ecf0f1;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            border-top: 4px solid var(--primary-color);
+        }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
+        .footer-brand { text-align: center; }
+        .footer-logo { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 24px; font-weight: bold; margin-bottom: 15px; color: var(--primary-color); }
+        .footer-tagline { font-size: 16px; color: #bdc3c7; line-height: 1.6; }
+        .footer-info { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .footer-section h4 { color: var(--primary-color); margin-bottom: 10px; font-size: 18px; }
+        .footer-section p { color: #bdc3c7; line-height: 1.6; margin-bottom: 8px; }
+
+        @media (max-width: 768px) { .strategies-grid, .metrics-grid, .investment-grid { grid-template-columns: 1fr; } }
+    </style>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const growthCtx = document.getElementById('growthChart');
+            if (growthCtx) {
+                new Chart(growthCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                        datasets: [{
+                            label: 'نمو الإيرادات',
+                            data: [100, 180, 320, 580, 1200, 2800],
+                            borderColor: '#28a745',
+                            backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value + 'K';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

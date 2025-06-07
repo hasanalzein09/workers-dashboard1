@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات والتحكم - منصة إدارة الموظفين | HMZ Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span class="logo-text">HMZ Dashboard</span>
+            </div>
+            <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="sidebar-menu">
+            <ul class="menu-list">
+                <li class="menu-item"><a href="index.html" class="menu-link"><i class="fas fa-chart-line"></i><span>نظرة عامة</span></a></li>
+                <li class="menu-item"><a href="analytics.html" class="menu-link"><i class="fas fa-analytics"></i><span>التحليلات</span></a></li>
+                <li class="menu-item"><a href="revenue.html" class="menu-link"><i class="fas fa-dollar-sign"></i><span>الإيرادات</span></a></li>
+                <li class="menu-item"><a href="customers.html" class="menu-link"><i class="fas fa-users"></i><span>العملاء</span></a></li>
+                <li class="menu-item"><a href="employees.html" class="menu-link"><i class="fas fa-user-tie"></i><span>الموظفون المتتبعون</span></a></li>
+                <li class="menu-item"><a href="reports.html" class="menu-link"><i class="fas fa-file-alt"></i><span>التقارير</span></a></li>
+                <li class="menu-item"><a href="growth.html" class="menu-link"><i class="fas fa-trending-up"></i><span>النمو</span></a></li>
+                <li class="menu-item active"><a href="settings.html" class="menu-link"><i class="fas fa-cogs"></i><span>الإعدادات</span></a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">أحمد محمد</span>
+                    <span class="user-role">المدير التنفيذي</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <h1 class="page-title">الإعدادات والتحكم</h1>
+                <p class="page-subtitle">إعدادات النظام، الأمان، والتخصيص</p>
+            </div>
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="btn btn-outline"><i class="fas fa-history"></i>سجل التغييرات</button>
+                    <button class="btn btn-primary"><i class="fas fa-save"></i>حفظ الإعدادات</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="settings-navigation">
+            <div class="nav-tabs">
+                <div class="tab-item active" data-tab="general">
+                    <i class="fas fa-cog"></i>
+                    <span>عام</span>
+                </div>
+                <div class="tab-item" data-tab="security">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>الأمان</span>
+                </div>
+                <div class="tab-item" data-tab="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span>الإشعارات</span>
+                </div>
+                <div class="tab-item" data-tab="integrations">
+                    <i class="fas fa-plug"></i>
+                    <span>التكاملات</span>
+                </div>
+                <div class="tab-item" data-tab="billing">
+                    <i class="fas fa-credit-card"></i>
+                    <span>الفواتير</span>
+                </div>
+                <div class="tab-item" data-tab="team">
+                    <i class="fas fa-users"></i>
+                    <span>الفريق</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- General Settings Tab -->
+        <section class="tab-content active" id="general">
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <div class="card-header">
+                        <h3>الإعدادات العامة</h3>
+                        <p>إعدادات أساسية للنظام والواجهة</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="setting-item">
+                            <label>اسم المؤسسة</label>
+                            <input type="text" value="HMZ Technology" class="form-input">
+                        </div>
+                        <div class="setting-item">
+                            <label>المنطقة الزمنية</label>
+                            <select class="form-select">
+                                <option value="asia/riyadh" selected>آسيا/الرياض (GMT+3)</option>
+                                <option value="asia/dubai">آسيا/دبي (GMT+4)</option>
+                                <option value="africa/cairo">أفريقيا/القاهرة (GMT+2)</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>اللغة الافتراضية</label>
+                            <select class="form-select">
+                                <option value="ar" selected>العربية</option>
+                                <option value="en">الإنجليزية</option>
+                                <option value="fr">الفرنسية</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>العملة</label>
+                            <select class="form-select">
+                                <option value="usd" selected>الدولار الأمريكي (USD)</option>
+                                <option value="sar">الريال السعودي (SAR)</option>
+                                <option value="aed">الدرهم الإماراتي (AED)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <div class="card-header">
+                        <h3>تخصيص الواجهة</h3>
+                        <p>إعدادات المظهر والألوان</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="setting-item">
+                            <label class="toggle-label">
+                                <span>الوضع الليلي</span>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="darkMode">
+                                    <span class="slider"></span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label>لون النظام الأساسي</label>
+                            <div class="color-palette">
+                                <div class="color-option active" data-color="#1B4B7F"></div>
+                                <div class="color-option" data-color="#28a745"></div>
+                                <div class="color-option" data-color="#6f42c1"></div>
+                                <div class="color-option" data-color="#dc3545"></div>
+                                <div class="color-option" data-color="#fd7e14"></div>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label class="toggle-label">
+                                <span>الشريط الجانبي المصغر</span>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="compactSidebar">
+                                    <span class="slider"></span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Settings Tab -->
+        <section class="tab-content" id="security">
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <div class="card-header">
+                        <h3>إعدادات الأمان</h3>
+                        <p>حماية الحساب والبيانات</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="setting-item">
+                            <label class="toggle-label">
+                                <span>المصادقة الثنائية (2FA)</span>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="twoFactor" checked>
+                                    <span class="slider"></span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label>مدة انتهاء الجلسة</label>
+                            <select class="form-select">
+                                <option value="30">30 دقيقة</option>
+                                <option value="60" selected>ساعة واحدة</option>
+                                <option value="480">8 ساعات</option>
+                                <option value="never">لا تنتهي</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label class="toggle-label">
+                                <span>تسجيل عمليات تسجيل الدخول</span>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="loginLogging" checked>
+                                    <span class="slider"></span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <button class="btn btn-outline">تغيير كلمة المرور</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <div class="card-header">
+                        <h3>محاولات تسجيل الدخول الأخيرة</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="login-attempts">
+                            <div class="attempt-item success">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="attempt-info">
+                                    <span class="attempt-time">اليوم 14:30</span>
+                                    <span class="attempt-location">الرياض، السعودية</span>
+                                    <span class="attempt-device">Chrome - Windows</span>
+                                </div>
+                            </div>
+                            <div class="attempt-item success">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="attempt-info">
+                                    <span class="attempt-time">أمس 09:15</span>
+                                    <span class="attempt-location">الرياض، السعودية</span>
+                                    <span class="attempt-device">Safari - iPhone</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notifications Tab -->
+        <section class="tab-content" id="notifications">
+            <div class="settings-card">
+                <div class="card-header">
+                    <h3>إعدادات الإشعارات</h3>
+                    <p>تحكم في أنواع الإشعارات التي تريد استلامها</p>
+                </div>
+                <div class="card-content">
+                    <div class="notification-categories">
+                        <div class="notification-category">
+                            <h4>الإشعارات المالية</h4>
+                            <div class="notification-item">
+                                <label class="toggle-label">
+                                    <span>تقارير الإيرادات الجديدة</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="notification-item">
+                                <label class="toggle-label">
+                                    <span>تنبيهات الدفع</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="notification-category">
+                            <h4>إشعارات النظام</h4>
+                            <div class="notification-item">
+                                <label class="toggle-label">
+                                    <span>تحديثات النظام</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="notification-item">
+                                <label class="toggle-label">
+                                    <span>صيانة مجدولة</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Management Tab -->
+        <section class="tab-content" id="team">
+            <div class="settings-card">
+                <div class="card-header">
+                    <h3>إدارة الفريق</h3>
+                    <p>أعضاء الفريق والصلاحيات</p>
+                    <button class="btn btn-primary btn-sm">دعوة عضو جديد</button>
+                </div>
+                <div class="card-content">
+                    <div class="team-members">
+                        <div class="member-item">
+                            <div class="member-avatar">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face" alt="Member">
+                            </div>
+                            <div class="member-info">
+                                <span class="member-name">أحمد محمد العلي</span>
+                                <span class="member-email">ahmed@hmztechnology.com</span>
+                                <span class="member-role">مدير تنفيذي</span>
+                            </div>
+                            <div class="member-status">
+                                <span class="status active">نشط</span>
+                            </div>
+                            <div class="member-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="member-item">
+                            <div class="member-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b789?w=50&h=50&fit=crop&crop=face" alt="Member">
+                            </div>
+                            <div class="member-info">
+                                <span class="member-name">فاطمة سالم النور</span>
+                                <span class="member-email">fatima@hmztechnology.com</span>
+                                <span class="member-role">مديرة التطوير</span>
+                            </div>
+                            <div class="member-status">
+                                <span class="status active">نشط</span>
+                            </div>
+                            <div class="member-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>HMZ Technology</span>
+                </div>
+                <p class="footer-tagline">منصة SaaS متطورة لإدارة الموظفين - تحكم كامل وآمن</p>
+            </div>
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h4>الإعدادات المتقدمة</h4>
+                    <p>تحكم شامل في جميع جوانب النظام</p>
+                    <p>📧 settings@hmztechnology.com | 📱 +961 70 106 083</p>
+                </div>
+                <div class="footer-section">
+                    <h4>الأمان والحماية</h4>
+                    <p>حماية متقدمة للبيانات والخصوصية</p>
+                    <p>النسخة: Settings Pro v2.0 © 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .nav-tabs { display: flex; background: white; border-radius: var(--border-radius); padding: var(--spacing-sm); margin-bottom: var(--spacing-lg); box-shadow: var(--shadow-sm); }
+        .tab-item { display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-md) var(--spacing-lg); border-radius: var(--border-radius); cursor: pointer; transition: all 0.3s ease; color: var(--text-secondary); }
+        .tab-item:hover { background: #f8f9fa; }
+        .tab-item.active { background: var(--primary-color); color: white; }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); }
+        .settings-card { background: white; border-radius: var(--border-radius); padding: var(--spacing-lg); box-shadow: var(--shadow-md); margin-bottom: var(--spacing-lg); }
+        .setting-item { margin-bottom: var(--spacing-lg); }
+        .setting-item label { display: block; margin-bottom: var(--spacing-sm); font-weight: 500; color: var(--text-primary); }
+        .form-input, .form-select { width: 100%; padding: var(--spacing-md); border: 1px solid #ddd; border-radius: var(--border-radius); font-size: var(--font-size-sm); }
+
+        .toggle-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0; }
+        .toggle-switch { position: relative; width: 50px; height: 24px; }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 24px; }
+        .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: var(--primary-color); }
+        input:checked + .slider:before { transform: translateX(26px); }
+
+        .color-palette { display: flex; gap: var(--spacing-sm); }
+        .color-option { width: 30px; height: 30px; border-radius: 50%; cursor: pointer; border: 3px solid transparent; transition: all 0.3s ease; }
+        .color-option.active { border-color: var(--text-primary); }
+        .color-option[data-color="#1B4B7F"] { background: #1B4B7F; }
+        .color-option[data-color="#28a745"] { background: #28a745; }
+        .color-option[data-color="#6f42c1"] { background: #6f42c1; }
+        .color-option[data-color="#dc3545"] { background: #dc3545; }
+        .color-option[data-color="#fd7e14"] { background: #fd7e14; }
+
+        .login-attempts { display: flex; flex-direction: column; gap: var(--spacing-md); }
+        .attempt-item { display: flex; align-items: center; gap: var(--spacing-md); padding: var(--spacing-md); background: #f8f9fa; border-radius: var(--border-radius); }
+        .attempt-item.success i { color: var(--success-color); }
+        .attempt-info { display: flex; flex-direction: column; gap: 2px; }
+        .attempt-time { font-weight: 600; color: var(--text-primary); }
+        .attempt-location, .attempt-device { font-size: var(--font-size-xs); color: var(--text-secondary); }
+
+        .notification-categories { display: flex; flex-direction: column; gap: var(--spacing-xl); }
+        .notification-category h4 { margin-bottom: var(--spacing-md); color: var(--text-primary); }
+        .notification-item { margin-bottom: var(--spacing-md); }
+
+        .team-members { display: flex; flex-direction: column; gap: var(--spacing-md); }
+        .member-item { display: flex; align-items: center; gap: var(--spacing-md); padding: var(--spacing-md); background: #f8f9fa; border-radius: var(--border-radius); }
+        .member-avatar { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; }
+        .member-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .member-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+        .member-name { font-weight: 600; color: var(--text-primary); }
+        .member-email { font-size: var(--font-size-sm); color: var(--text-secondary); }
+        .member-role { font-size: var(--font-size-xs); color: var(--primary-color); }
+        .member-status .status { padding: 4px 8px; border-radius: 12px; font-size: var(--font-size-xs); font-weight: 600; }
+        .status.active { background: #e8f5e8; color: #2e7d32; }
+        .member-actions { display: flex; gap: var(--spacing-xs); }
+        .btn-icon { background: none; border: none; padding: 6px; border-radius: 4px; cursor: pointer; color: var(--text-secondary); transition: all 0.2s; }
+        .btn-icon:hover { background: white; color: var(--primary-color); }
+
+        .dashboard-footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #ecf0f1;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            border-top: 4px solid var(--primary-color);
+        }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
+        .footer-brand { text-align: center; }
+        .footer-logo { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 24px; font-weight: bold; margin-bottom: 15px; color: var(--primary-color); }
+        .footer-tagline { font-size: 16px; color: #bdc3c7; line-height: 1.6; }
+        .footer-info { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .footer-section h4 { color: var(--primary-color); margin-bottom: 10px; font-size: 18px; }
+        .footer-section p { color: #bdc3c7; line-height: 1.6; margin-bottom: 8px; }
+
+        @media (max-width: 768px) { 
+            .settings-grid { grid-template-columns: 1fr; }
+            .nav-tabs { flex-direction: column; }
+        }
+    </style>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabItems = document.querySelectorAll('.tab-item');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const targetTab = item.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and contents
+                    tabItems.forEach(tab => tab.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    item.classList.add('active');
+                    if (targetTab) {
+                        document.getElementById(targetTab).classList.add('active');
+                    }
+                });
+            });
+
+            // Color palette functionality
+            const colorOptions = document.querySelectorAll('.color-option');
+            colorOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    colorOptions.forEach(opt => opt.classList.remove('active'));
+                    option.classList.add('active');
+                    
+                    const color = option.getAttribute('data-color');
+                    document.documentElement.style.setProperty('--primary-color', color);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
