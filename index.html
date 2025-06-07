@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - منصة إدارة الموظفين | HMZ Technology</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span class="logo-text">HMZ Dashboard</span>
+            </div>
+            <button class="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul class="menu-list">
+                <li class="menu-item active">
+                    <a href="#overview" class="menu-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>نظرة عامة</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#analytics" class="menu-link">
+                        <i class="fas fa-analytics"></i>
+                        <span>التحليلات</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#revenue" class="menu-link">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>الإيرادات</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#customers" class="menu-link">
+                        <i class="fas fa-users"></i>
+                        <span>العملاء</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#employees" class="menu-link">
+                        <i class="fas fa-user-tie"></i>
+                        <span>الموظفون المتتبعون</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#reports" class="menu-link">
+                        <i class="fas fa-file-alt"></i>
+                        <span>التقارير</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#growth" class="menu-link">
+                        <i class="fas fa-trending-up"></i>
+                        <span>النمو</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#settings" class="menu-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>الإعدادات</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">أحمد محمد</span>
+                    <span class="user-role">المدير التنفيذي</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <h1 class="page-title">لوحة التحكم الرئيسية</h1>
+                <p class="page-subtitle">مرحباً بك في نظام إدارة منصة SaaS - آخر تحديث: اليوم الساعة 14:32</p>
+            </div>
+            <div class="header-right">
+                <div class="header-stats">
+                    <div class="quick-stat">
+                        <span class="stat-label">الحالة</span>
+                        <span class="stat-value online">متصل</span>
+                    </div>
+                    <div class="quick-stat">
+                        <span class="stat-label">آخر تحديث</span>
+                        <span class="stat-value" id="last-update">قبل دقيقتين</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        تصدير التقرير
+                    </button>
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">7</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Overview Cards -->
+        <section class="overview-section">
+            <div class="cards-grid">
+                <!-- Revenue Card -->
+                <div class="stats-card revenue-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="card-menu">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">إجمالي الإيرادات</h3>
+                        <div class="card-value">$2,847,392</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+18.5% من الشهر الماضي</span>
+                        </div>
+                        <div class="mini-chart">
+                            <canvas id="revenueChart" width="100" height="40"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customers Card -->
+                <div class="stats-card customers-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="card-menu">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">الشركات العميلة</h3>
+                        <div class="card-value">1,247</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+12.3% نمو شهري</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                        <small class="progress-text">78% من الهدف السنوي (1,600)</small>
+                    </div>
+                </div>
+
+                <!-- Employees Tracked -->
+                <div class="stats-card employees-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-menu">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">الموظفون المتتبعون</h3>
+                        <div class="card-value">89,432</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+2,147 هذا الأسبوع</span>
+                        </div>
+                        <div class="activity-indicator">
+                            <div class="indicator active"></div>
+                            <span>74,832 نشط حالياً</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Growth Rate -->
+                <div class="stats-card growth-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-menu">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">معدل النمو الشهري</h3>
+                        <div class="card-value">+24.7%</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-trending-up"></i>
+                            <span>أعلى من المتوقع بـ 8.2%</span>
+                        </div>
+                        <div class="growth-indicators">
+                            <div class="indicator-item">
+                                <span class="indicator-label">عملاء جدد</span>
+                                <span class="indicator-value">+156</span>
+                            </div>
+                            <div class="indicator-item">
+                                <span class="indicator-label">ترقيات</span>
+                                <span class="indicator-value">+89</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Analytics Section -->
+        <section class="analytics-section">
+            <div class="analytics-grid">
+                <!-- Revenue Analytics -->
+                <div class="analytics-card large">
+                    <div class="card-header">
+                        <h3 class="card-title">تحليل الإيرادات السنوية</h3>
+                        <div class="card-controls">
+                            <select class="period-selector">
+                                <option>آخر 12 شهر</option>
+                                <option>آخر 6 أشهر</option>
+                                <option>آخر 3 أشهر</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="chart-container">
+                            <canvas id="mainRevenueChart"></canvas>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="legend-color revenue"></div>
+                                <span>الإيرادات الشهرية</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color target"></div>
+                                <span>الهدف المحدد</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color projection"></div>
+                                <span>التوقعات</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Segments -->
+                <div class="analytics-card medium">
+                    <div class="card-header">
+                        <h3 class="card-title">توزيع قطاعات العملاء</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="chart-container">
+                            <canvas id="segmentChart"></canvas>
+                        </div>
+                        <div class="segment-stats">
+                            <div class="segment-item">
+                                <div class="segment-color construction"></div>
+                                <div class="segment-info">
+                                    <span class="segment-name">البناء والمقاولات</span>
+                                    <span class="segment-percentage">42.3%</span>
+                                </div>
+                                <span class="segment-value">$1,204,857</span>
+                            </div>
+                            <div class="segment-item">
+                                <div class="segment-color logistics"></div>
+                                <div class="segment-info">
+                                    <span class="segment-name">النقل واللوجستيات</span>
+                                    <span class="segment-percentage">28.7%</span>
+                                </div>
+                                <span class="segment-value">$817,243</span>
+                            </div>
+                            <div class="segment-item">
+                                <div class="segment-color security"></div>
+                                <div class="segment-info">
+                                    <span class="segment-name">الأمن والحراسة</span>
+                                    <span class="segment-percentage">18.2%</span>
+                                </div>
+                                <span class="segment-value">$518,394</span>
+                            </div>
+                            <div class="segment-item">
+                                <div class="segment-color retail"></div>
+                                <div class="segment-info">
+                                    <span class="segment-name">التجارة والخدمات</span>
+                                    <span class="segment-percentage">10.8%</span>
+                                </div>
+                                <span class="segment-value">$306,898</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Tables Section -->
+        <section class="tables-section">
+            <div class="tables-grid">
+                <!-- Top Customers Table -->
+                <div class="table-card">
+                    <div class="card-header">
+                        <h3 class="card-title">أهم العملاء (الإيرادات)</h3>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">عرض الكل</button>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>الشركة</th>
+                                    <th>القطاع</th>
+                                    <th>عدد الموظفين</th>
+                                    <th>الإيرادات الشهرية</th>
+                                    <th>معدل النمو</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="company-info">
+                                            <div class="company-logo">🏗️</div>
+                                            <div>
+                                                <div class="company-name">شركة الخليج للمقاولات</div>
+                                                <div class="company-id">#CLT-00847</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="sector-tag construction">مقاولات</span></td>
+                                    <td>2,847</td>
+                                    <td class="revenue">$34,164</td>
+                                    <td class="growth positive">+18.5%</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="company-info">
+                                            <div class="company-logo">🚛</div>
+                                            <div>
+                                                <div class="company-name">النقل السريع المتحد</div>
+                                                <div class="company-id">#LOG-00623</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="sector-tag logistics">نقل</span></td>
+                                    <td>1,956</td>
+                                    <td class="revenue">$29,340</td>
+                                    <td class="growth positive">+22.1%</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="company-info">
+                                            <div class="company-logo">🛡️</div>
+                                            <div>
+                                                <div class="company-name">الحراسة الذكية</div>
+                                                <div class="company-id">#SEC-00891</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="sector-tag security">أمن</span></td>
+                                    <td>1,432</td>
+                                    <td class="revenue">$11,456</td>
+                                    <td class="growth positive">+15.7%</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="company-info">
+                                            <div class="company-logo">🏢</div>
+                                            <div>
+                                                <div class="company-name">مجمع الشرق التجاري</div>
+                                                <div class="company-id">#RTL-00534</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="sector-tag retail">تجارة</span></td>
+                                    <td>876</td>
+                                    <td class="revenue">$8,760</td>
+                                    <td class="growth positive">+9.3%</td>
+                                    <td><span class="status-badge active">نشط</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="company-info">
+                                            <div class="company-logo">🏗️</div>
+                                            <div>
+                                                <div class="company-name">البناء المتطور</div>
+                                                <div class="company-id">#CLT-00729</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="sector-tag construction">مقاولات</span></td>
+                                    <td>654</td>
+                                    <td class="revenue">$7,848</td>
+                                    <td class="growth negative">-2.1%</td>
+                                    <td><span class="status-badge warning">مراجعة</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Performance Metrics -->
+                <div class="metrics-card">
+                    <div class="card-header">
+                        <h3 class="card-title">مؤشرات الأداء الرئيسية</h3>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-label">معدل الاحتفاظ بالعملاء</span>
+                                <span class="metric-value">94.2%</span>
+                                <span class="metric-change positive">+2.1%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-label">متوسط وقت الاستجابة</span>
+                                <span class="metric-value">1.2 ثانية</span>
+                                <span class="metric-change positive">-0.3s</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-label">تقييم رضا العملاء</span>
+                                <span class="metric-value">4.8/5</span>
+                                <span class="metric-change positive">+0.2</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-label">معدل الجهوزية</span>
+                                <span class="metric-value">99.97%</span>
+                                <span class="metric-change stable">0.0%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-label">معدل التحديث اليومي</span>
+                                <span class="metric-value">847,329</span>
+                                <span class="metric-change positive">+5.7%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="metric-info">
+                                <span class="metric-label">معدل الأخطاء</span>
+                                <span class="metric-value">0.03%</span>
+                                <span class="metric-change negative">-0.01%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-time Activity -->
+        <section class="activity-section">
+            <div class="activity-card">
+                <div class="card-header">
+                    <h3 class="card-title">النشاط المباشر</h3>
+                    <div class="activity-status">
+                        <div class="status-indicator live"></div>
+                        <span>مباشر</span>
+                    </div>
+                </div>
+                <div class="activity-feed">
+                    <div class="activity-item">
+                        <div class="activity-time">14:28</div>
+                        <div class="activity-content">
+                            <i class="fas fa-user-plus text-success"></i>
+                            <span>انضمت شركة "المستقبل للتجارة" مع 234 موظف</span>
+                            <span class="activity-value">+$2,808/شهر</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-time">14:15</div>
+                        <div class="activity-content">
+                            <i class="fas fa-chart-line text-primary"></i>
+                            <span>ترقية حساب شركة "الخليج للمقاولات" إلى Enterprise</span>
+                            <span class="activity-value">+$1,247/شهر</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-time">13:52</div>
+                        <div class="activity-content">
+                            <i class="fas fa-bell text-warning"></i>
+                            <span>تحديث خوارزمية الذكاء الاصطناعي - تحسن الأداء بـ 12%</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-time">13:34</div>
+                        <div class="activity-content">
+                            <i class="fas fa-sync text-info"></i>
+                            <span>مزامنة 45,672 موظف عبر 23 شركة</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-time">13:18</div>
+                        <div class="activity-content">
+                            <i class="fas fa-dollar-sign text-success"></i>
+                            <span>تم استلام دفعة شهرية: $156,789</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html> 
